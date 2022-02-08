@@ -17,11 +17,11 @@ interpreter = edgetpu.make_interpreter("model_edgetpu.tflite")
 interpreter.allocate_tensors()
 
 # Run an inference
-common.set_input(interpreter, input_test[13])
+common.set_input(interpreter, input_test[5])
 interpreter.invoke()
 classes = classify.get_classes(interpreter, top_k=1)
 
-print("target: ",target_test[13])
+print("target: ",target_test[5])
 print("pred: ",classes)
 # Print the result
 #labels = dataset.read_label_file(target_test[0])
