@@ -21,10 +21,12 @@ common.set_input(interpreter, input_test[0])
 interpreter.invoke()
 classes = classify.get_classes(interpreter, top_k=1)
 
+print("target: ",target_test[0])
+print("pred: ",classes)
 # Print the result
-labels = dataset.read_label_file(target_test[0])
-for c in classes:
-  print('%s: %.5f' % (labels.get(c.id, c.id), c.score))
+#labels = dataset.read_label_file(target_test[0])
+#for c in classes:
+#  print('%s: %.5f' % (labels.get(c.id, c.id), c.score))
 # Generate generalization metrics
 #
 #print(f'Test loss for Keras Leaky ReLU CNN: {score[0]} / Test accuracy: {score[1]}')
